@@ -68,15 +68,15 @@ configure<PublishingExtension> {
 }
 
 configure<BintrayExtension> {
-    user = System.getenv("BINTRAY_USER")
-    key = System.getenv("BINTRAY_KEY")
+    user = System.getProperty("bintray.user")
+    key = System.getProperty("bintray.pass")
 
     pkg = PackageConfig().apply {
-        userOrg = "kotlin"
-        repo = "kotlin-dev"
+        userOrg = "vorpal-research"
+        repo = "kotlin-maven"
         name = "inspections"
         desc = "IDEA inspection offline running tool"
-        vcsUrl = "https://github.com/mglukhikh/inspection-plugin.git"
+        vcsUrl = "https://github.com/Kotlin-Polytech/inspection-plugin.git"
         setLicenses("Apache-2.0")
         version = VersionConfig().apply {
             name = projectVersion
